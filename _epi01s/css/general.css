@@ -1,0 +1,85 @@
+@charset "utf-8";
+/*------------------------------------------------------------
+	書式設定
+------------------------------------------------------------*/
+/* テキストの位置 */
+.taLeft { text-align: left !important; }
+.taCenter { text-align: center !important; }
+.taRight { text-align: right !important; }
+
+/* フォントの太さ */
+.fwNormal { font-weight: normal !important; }
+.fwBold { font-weight: bold !important; }
+
+/*------------------------------------------------------------
+	汎用スタイル
+------------------------------------------------------------*/
+	* html .clearfix {
+		zoom: 1;
+	}
+
+	*+html .clearfix {
+		zoom: 1;
+	}
+
+.clearfix:after {
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+}
+
+
+/*------------------------------------------------------------
+/*--- cssアニメーション ここから ---
+------------------------------------------------------------*/
+.keyframe {
+  animation-name: anim_sc;
+  transform: scale(0.9, 0.9);
+}
+
+@keyframes anim_sc {
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.animation {
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+}
+
+/*--- cssアニメーション ここまで ---*/
+
+
+/*------------------------------------------------------------
+	common
+------------------------------------------------------------*/
+.comContact {
+    margin: 15px 0 0px 10px;
+    position: relative;
+}
+
+.comContact p {
+    position: absolute;
+    right: 3.5%;
+    bottom: 20%;
+    width: 36.5%;
+    z-index: 1;
+}
+
+.comContact .btn {
+    position: absolute;
+    right: 6.4%;
+    bottom: 7%;
+    width: 88.3%;
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+}
+
+@media all and (max-width: 767px) {
+}

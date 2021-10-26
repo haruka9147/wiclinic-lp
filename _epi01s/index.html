@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>ウィクリニック</title>
+    <meta name="description" content="「医療脱毛なのに痛くない」全身医療脱毛プレミアム5回セット月額3,400円。今だけ最先端リフトアップ治療スーパーHIFU1回無料" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animate.wow.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" media="screen" type="text/css" href="css/validationEngine.jquery.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="./js/wow.min.js"></script>
+    <script src="./js/script.js"></script>
+
+    <script src="js/jquery.validationEngine.js"></script>
+    <script src="js/jquery.validationEngine-ja.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.ui.datepicker-ja.min.js"></script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '903072450488562');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=903072450488562&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MRP8CN3');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script>
+        $(function() {
+            $(".mailForm").validationEngine();
+            $('#datepicker01').datepicker({
+                showOtherMonths: true,
+                dateFormat: 'yy年mm月dd日',
+                minDate: new Date(2019, 10 - 1, 1),
+                beforeShowDay: function(date) {
+                    var month = String(date.getMonth() + 1);
+                    var day = String(date.getDate());
+                    if (month.length == 1) {
+                        month = '0' + month;
+                    }
+                    if (day.length == 1) {
+                        day = '0' + day;
+                    }
+                    var check_date = date.getFullYear() + "-" + month + "-" + day;
+                    if (check_date == "2019-09-01") {
+                        return [false];
+                    }
+                    return [true, ''];
+                },
+                onSelect: function(dateText, inst) {
+                    $('[name="第1希望日"]').val(dateText);
+                }
+            });
+            $('#datepicker02').datepicker({
+                showOtherMonths: true,
+                minDate: new Date(2019, 10 - 1, 1),
+                dateFormat: 'yy年mm月dd日',
+                beforeShowDay: function(date) {
+
+                    var month = String(date.getMonth() + 1);
+                    var day = String(date.getDate());
+                    if (month.length == 1) {
+                        month = '0' + month;
+                    }
+                    if (day.length == 1) {
+                        day = '0' + day;
+                    }
+                    var check_date = date.getFullYear() + "-" + month + "-" + day;
+                    if (check_date == "2019-09-01") {
+                        return [false];
+                    }
+                    return [true, ''];
+                },
+                onSelect: function(dateText, inst) {
+                    $('[name="第2希望日"]').val(dateText);
+                }
+            });
+            $('#datepicker03').datepicker({
+                showOtherMonths: true,
+                minDate: new Date(2020, 3 - 1, 29),
+                dateFormat: 'yy年mm月dd日',
+                beforeShowDay: function(date) {
+                    // 火曜日
+                    if (date.getDay() == 2) {
+                        return [false, ''];
+                    }
+
+                    var month = String(date.getMonth() + 1);
+                    var day = String(date.getDate());
+                    if (month.length == 1) {
+                        month = '0' + month;
+                    }
+                    if (day.length == 1) {
+                        day = '0' + day;
+                    }
+                    var check_date = date.getFullYear() + "-" + month + "-" + day;
+                    if (check_date == "2019-09-01") {
+                        return [false];
+                    }
+                    return [true, ''];
+                },
+                onSelect: function(dateText, inst) {
+                    $('[name="第1希望日"]').val(dateText);
+                }
+            });
+            $('#datepicker04').datepicker({
+                showOtherMonths: true,
+                minDate: new Date(2020, 3 - 1, 29),
+                dateFormat: 'yy年mm月dd日',
+                beforeShowDay: function(date) {
+                    // 火曜日
+                    if (date.getDay() == 2) {
+                        return [false, ''];
+                    }
+
+                    var month = String(date.getMonth() + 1);
+                    var day = String(date.getDate());
+                    if (month.length == 1) {
+                        month = '0' + month;
+                    }
+                    if (day.length == 1) {
+                        day = '0' + day;
+                    }
+                    var check_date = date.getFullYear() + "-" + month + "-" + day;
+                    if (check_date == "2019-09-01") {
+                        return [false];
+                    }
+                    return [true, ''];
+                },
+                onSelect: function(dateText, inst) {
+                    $('[name="第2希望日"]').val(dateText);
+                }
+            });
+
+            var param = getParam('pm1');
+            document.getElementById('pm_ginza').value = param;
+            document.getElementById('pm_kichijoji').value = param;
+            document.getElementById('pm_omiya').value = param;
+
+            function getParam(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+        });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54WKRJT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NMV3QTM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                "gtm.start": new Date().getTime(),
+                event: "gtm.js"
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s);
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + "&l=" + l;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dtLyr", "GTM-NMV3QTM");
+    </script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-54WKRJT');
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'AW-758975358');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-758975358"></script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M5SLMSM');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-456834397/BreKCJu-h-4BEN366tkB'
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5SLMSM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRP8CN3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script src="http://af-mediakanri.com/mark.js"></script>
+
+    <!-- ASP Tag START -->
+    <script language='javascript' src='https://p-salm.jp/ad/js/lpjs.js'></script>
+    <script>
+        var _CIDN = "cid";
+        var _PMTN = "p";
+        var _LPTU = "./";
+        var _param = location.search.substring(1).split("&");
+        var _ulp = "",
+            _ulcid = "";
+        for (var i = 0; _param[i]; i++) {
+            var kv = _param[i].split("=");
+            if (kv[0] == _PMTN && kv[1].length > 1) {
+                _ulp = kv[1];
+            }
+            if (kv[0] == _CIDN && kv[1].length > 1) {
+                _ulcid = kv[1];
+            }
+        }
+        if (_ulp && _ulcid) {
+            _xhr = new XMLHttpRequest();
+            _xhr.open("GET", _LPTU + "lptag.php?p=" + _ulp + "&cid=" + _ulcid);
+            _xhr.send();
+            localStorage.setItem("CL_" + _ulp, _ulcid);
+        }
+    </script>
+    <script>
+        var _CIDN = "cid";
+        var _PMTN = "p";
+        var _param = location.search.substring(1).split("&");
+        var _ulp = "",
+            _ulcid = "";
+        for (var i = 0; _param[i]; i++) {
+            var kv = _param[i].split("=");
+            if (kv[0] == _PMTN && kv[1].length > 1) {
+                _ulp = kv[1];
+            }
+            if (kv[0] == _CIDN && kv[1].length > 1) {
+                _ulcid = kv[1];
+            }
+        }
+        if (_ulp && _ulcid) {
+            document.cookie = "CL_" + _ulp + "=" + decodeURIComponent(_ulcid) + "; expires=" + new Date(new Date().getTime() + (63072000000)).toUTCString() + "; path=/;";
+            localStorage.setItem("CL_" + _ulp, _ulcid);
+        }
+    </script>
+    <!-- ASP Tag END -->
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1047686985403416');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1047686985403416&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+
+
+    <div id="wrap">
+        <div id="mainimage" class="mainimage2 contentsSection">
+            <div class="relative">
+                <!-- <img src="./img/main_image.png" alt="" class="main_image w100">
+                <img src="./img/main_ttl.png" alt="" class="w60 main_ttl absolute wow fadeInRight" data-wow-delay="0s">
+                <img src="./img/main_comment.png" alt="" class="w40 main_comment absolute wow bounceIn" data-wow-delay="0.4s"> -->
+                <img src="./img/WiclinicFV210802.jpg" alt="" class="main_image w100">
+            </div>
+            <!-- <img src="./img/main_text2.png" alt="" class="main_text w100"> -->
+            <a href="#contact"><img src="./img/main_cv.png" alt="" class="main_cv w100 fuwafuwa"></a>
+        </div>
+        <div id="promise" class="contentsSection">
+            <!-- <img src="./img/promise_01.png" alt="" class="promise_01 w100"> -->
+            <img src="./img/promise_02.png" alt="" class="promise_02 w80 mt20 mb20">
+            <div class="relative">
+                <img src="./img/promise_03.png" alt="" class="promise_03 w90">
+                <img src="./img/promise_none.png" alt="" class="promise_none_01 w20 absolute wow bounceIn" data-wow-delay="0s">
+                <img src="./img/promise_none.png" alt="" class="promise_none_02 w20 absolute wow bounceIn" data-wow-delay="0.2s">
+                <img src="./img/promise_none.png" alt="" class="promise_none_03 w20 absolute wow bounceIn" data-wow-delay="0.4s">
+                <img src="./img/promise_none.png" alt="" class="promise_none_04 w20 absolute wow bounceIn" data-wow-delay="0.6s">
+                <img src="./img/promise_none.png" alt="" class="promise_none_05 w20 absolute wow bounceIn" data-wow-delay="0.8s">
+            </div>
+        </div>
+        <div id="reason" class="contentsSection">
+            <div class="relative">
+                <img src="./img/reason_bg.png" alt="" class="reason_bg w100">
+                <img src="./img/reason_01.png" alt="" class="reason_01 w80 absolute wow fadeIn" data-wow-delay="0s">
+                <img src="./img/reason_02.png" alt="" class="reason_02 w90 absolute wow fadeIn" data-wow-delay="0.4s" data-wow-duration="0.3s">
+                <img src="./img/reason_03.png" alt="" class="reason_03 w90 absolute wow fadeIn" data-wow-delay="0s" data-wow-duration="0.3s">
+            </div>
+            <img src="./img/reason_04.png" alt="" class="reason_04 w100">
+            <img src="./img/reason_05.png" alt="" class="reason_05 w90 wow bounceIn" data-wow-delay="0s">
+        </div>
+        <div id="point" class="contentsSection">
+            <div class="relative">
+                <img src="./img/point_01.png" alt="" class="point_01 w100">
+                <img src="./img/point_02.png" alt="" class="point_02 w50 absolute wow fadeInLeft" data-wow-delay="0.4s" data-wow-duration="0.5s">
+            </div>
+            <img src="./img/point_03.png" alt="" class="point_03 w100" data-wow-delay="0.8s">
+            <img src="./img/point_04.png" alt="" class="point_04 w80 mb30">
+            <img src="./img/point_05.png" alt="" class="point_05 w90">
+            <img src="./img/point_06.png" alt="" class="point_06 w100">
+            <img src="./img/point_07.png" alt="" class="point_07 w80 absolute wow fadeInUp">
+        </div>
+        <div id="merit" class="contentsSection">
+            <img src="./img/merit_01.png" alt="" class="merit_01 w90">
+            <div class="relative">
+                <img src="./img/merit_02.png" alt="" class="merit_02 w100 wow fadeInLeft" data-wow-duration="1s">
+                <img src="./img/merit_03.png" alt="" class="merit_03 w90 absolute wow fadeIn" data-wow-delay="0.5s" data-wow-duration="1s">
+            </div>
+        </div>
+        <div id="cta_01" class="cta cta2 contentsSection">
+            <img src="./img/cta_01_2.png" alt="" class="cta_01 w100">
+            <a href="#contact"><img src="./img/cv_btn.png" alt="" class="cv_btn w100 absolute fuwafuwa"></a>
+            <!-- <img src="./img/cta_hifu.png" alt="" class="cta_hifu w100 absolute"> -->
+        </div>
+        <div id="parts" class="contentsSection">
+            <img src="./img/parts_01.png" alt="" class="parts_01 w100">
+            <img src="./img/parts_02.png" alt="" class="parts_02 w90 absolute wow bounceIn">
+            <img src="./img/model_01.png" alt="" class="model_01 w90 wow fadeIn">
+        </div>
+        <div id="flow" class="contentsSection">
+            <img src="./img/flow_ttl.png" alt="" class="flow_ttl w90">
+            <div class="relative">
+                <img src="./img/flow_bg.png" alt="" class="flow_bg w100">
+                <img src="./img/flow_01.png" alt="" class="flow_01 w50 absolute wow fadeInRight" data-wow-delay="0.3s">
+                <img src="./img/flow_02.png" alt="" class="flow_02 w50 absolute wow fadeInLeft" data-wow-delay="0.3s">
+                <img src="./img/flow_03.png" alt="" class="flow_03 w50 absolute wow fadeInRight" data-wow-delay="0.3s">
+                <img src="./img/flow_04.png" alt="" class="flow_04 w50 absolute wow fadeInLeft" data-wow-delay="0.3s">
+                <img src="./img/flow_05.png" alt="" class="flow_05 w50 absolute wow fadeInRight" data-wow-delay="0.3s">
+            </div>
+        </div>
+        <div id="cta_02" class="cta cta2 contentsSection">
+            <img src="./img/cta_01_2.png" alt="" class="cta_01 w100">
+            <a href="#contact"><img src="./img/cv_btn.png" alt="" class="cv_btn w100 absolute fuwafuwa"></a>
+            <!-- <img src="./img/cta_hifu.png" alt="" class="cta_hifu w100 absolute"> -->
+        </div>
+        <div id="choice" class="contentsSection">
+            <img src="./img/choice_01.png" alt="" class="choice_01 w90">
+            <img src="./img/choice_02.png" alt="" class="choice_02  wow bounceIn w100">
+
+        </div>
+        <div id="present" class="contentsSection present2">
+            <!-- <div class="relative">
+                <img src="./img/present_01.png" alt="" class="present_01 w90">
+                <img src="./img/present_ribbon_01.png" alt="" class="present_ribbon_01 w70 absolute wow fadeInLeft">
+                <img src="./img/present_ribbon_02.png" alt="" class="present_ribbon_02 w50 absolute wow fadeInright">
+                <img src="./img/present_ttl.png" alt="" class="present_ttl w90 absolute wow bounceInDown">
+                <img src="./img/about_hifu.png" alt="" class="about_hifu w80 absolute wow fadeIn" data-wow-delay="0.2s">
+                <img src="./img/present_price.png" alt="" class="present_price w20 absolute wow bounceIn" data-wow-delay="0.5s">
+            </div> -->
+            <img src="./img/present_02.png" alt="" class="present_02 w90">
+        </div>
+        <div id="qa" class="contentsSection">
+            <img src="./img/qa_ttl.png" alt="" class="qa_ttl w60">
+            <img src="./img/qa_01.png" alt="" class="qa_01 w90 wow fadeIn">
+            <img src="./img/qa_02.png" alt="" class="qa_02 w90 mt20 wow fadeIn">
+            <img src="./img/qa_03.png" alt="" class="qa_0# w90 mt20 wow fadeIn">
+        </div>
+        <div id="cta_03" class="cta cta2 contentsSection">
+            <img src="./img/cta_01_2.png" alt="" class="cta_01 w100">
+            <a href="#contact"><img src="./img/cv_btn.png" alt="" class="cv_btn w100 absolute fuwafuwa"></a>
+            <!-- <img src="./img/cta_hifu.png" alt="" class="cta_hifu w100 absolute"> -->
+        </div>
+        <div id="access" class="contentsSection">
+            <img src="./img/access_01.png" alt="" class="access_01 w100 mb80">
+            <img src="./img/ginza_01.png" alt="" class="ginza_01 w100 mb10">
+            <div class="mapBox relative">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d748.2564640254599!2d139.76154427153142!3d35.667844535758476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188be87cbb564b%3A0xfb2771b37223c683!2z44CSMTA0LTAwNjEg5p2x5Lqs6YO95Lit5aSu5Yy66YqA5bqn77yY5LiB55uu77yZIOmVt-W0juOCu-ODs-OCv-ODvOODk-ODqw!5e0!3m2!1sja!2sjp!4v1555469444453!5m2!1sja!2sjp"
+                    allowfullscreen class="absolute"></iframe>
+            </div>
+            <img src="./img/ginza_02.png" alt="" class="ginza_02 w80 mt10">
+
+            <img src="./img/kichijoji_01.png" alt="" class="kichijoji_01 w100 mt60 mb10">
+            <div class="mapBox relative">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.8898680038524!2d139.57725870749175!3d35.704327680189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ee47c52ede2b%3A0x2b5230d895ff77e8!2z44CSMTgwLTAwMDQg5p2x5Lqs6YO95q2m6JS16YeO5biC5ZCJ56Wl5a-65pys55S677yR5LiB55uu77yY4oiS77yTIOWQieelpeWvuuesrOS6jOWFseWQjOODk-ODqyA0Rg!5e0!3m2!1sja!2sjp!4v1580293992777!5m2!1sja!2sjp"
+                    allowfullscreen class="absolute"></iframe>
+            </div>
+            <img src="./img/kichijoji_02.png" alt="" class="kichijoji_02 w80 mt10">
+            <!-- <img src="./img/access_02.png" alt="" class="access_01 w100 mt40"> -->
+
+            <img src="./img/omiya_01.png" alt="" class="omiya_01 w100 mt60 mb10">
+            <div class="mapBox relative">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.538772522984!2d139.62411341603092!3d35.909310325035406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018c146cb393829%3A0x314e61f79b7d56b3!2z44CSMzMwLTA4MDIg5Z-8546J55yM44GV44GE44Gf44G-5biC5aSn5a6u5Yy65a6u55S677yS5LiB55uu77yV77yRIOWkp-WuruODkeODvOOCr-ODk-ODqw!5e0!3m2!1sja!2sjp!4v1612169514604!5m2!1sja!2sjp" allowfullscreen class="absolute"></iframe>
+            </div>
+            <img src="./img/omiya_02.png" alt="" class="omiya_02 w80 mt10">
+            <!-- <img src="./img/access_02.png" alt="" class="access_01 w100 mt40"> -->
+
+            <img src="./img/shopImg1.png" alt="" class="access_01 w100 mt40">
+            <img src="./img/shopImg2.png" alt="" class="access_01 w100 mt10">
+
+            <img src="./img/doctor.png" alt="" class="doctor w100 mt60">
+        </div>
+
+
+        <div id="contact">
+            <div class="contact">
+                <h2>WEB予約フォーム</h2>
+                <ol class="formBread">
+                    <li class="formBreadNow"><span>入力</span></li>
+                    <li><span>予約内容確認</span></li>
+                    <li><span>予約完了</span></li>
+                </ol>
+                <p class="note">
+                    <span class="dot">●</span>下記予約フォームの各項目にご入力の上、「予約内容を確認する」ボタンをクリックしてください。<br>
+                    <span class="dot">●</span>内容の確認が取れ次第、ご入力いただいた連絡先にスタッフよりご連絡を致します。
+                </p>
+
+                <div class="select_content">
+                    <p class="select_title">カウンセリングをご希望のクリニックを選択してください</p>
+                    <select class="selectForm">
+                        <option value="-----">選択してください</option>
+                        <option value="ginza">銀座院へのお問い合わせ</option>
+                        <option value="kichijoji">吉祥寺院へのお問い合わせ</option>
+                        <option value="omiya">大宮院へのお問い合わせ</option>
+                    </select>
+                </div>
+
+                <form id="ginza" method="post" action="mail.php" class="mailForm">
+                    <input id="pm_ginza" name="pm1" type="hidden" size="30" value="">
+                    <dl id="contact">
+                        <!--
+                <dt class="fwBold"><span class="lineTxt">ご希望コース</span><span class="required">※必須</span></dt>
+                <dd><input type="checkbox" value="無料カウンセリング" name="ご希望コース" id="course" checked="checked"><label for="course">無料カウンセリング</label></dd>
+                -->
+
+                        <dt class="fwBold"><span class="lineTxt">ご希望日時</span></dt>
+                        <dd>
+                            <p class="ttl"><span class="dot">●</span> 第1希望<span class="required">※必須</span></p>
+                            <div class="dateBox clearfix">
+                                <div class="cal" id="datepicker01"></div>
+                                <div class="rBox">
+                                    <p class="ttl"><span class="dot">●</span> 日付</p>
+                                    <input type="text" name="第1希望日" placeholder="2018年2月8日" class="validate[required]">
+                                    <p class="ttl"><span class="dot">●</span> 時間</p>
+                                    <select name="第1希望時間" class="validate[required]">
+                                        <option value="">00:00～00:00</option>
+                                        <option value="10:00～11:00">10:00～11:00</option>
+                                        <option value="11:00～12:00">11:00～12:00</option>
+                                        <option value="12:00～13:00">12:00～13:00</option>
+                                        <option value="13:00～14:00">13:00～14:00</option>
+                                        <option value="14:00～15:00">14:00～15:00</option>
+                                        <option value="15:00～16:00">15:00～16:00</option>
+                                        <option value="16:00～17:00">16:00～17:00</option>
+                                        <option value="17:00～18:00">17:00～18:00</option>
+                                        <option value="18:00～19:00">18:00～19:00</option>
+                                    </select>
+                                    <!-- <ul class="notes">
+                                        <li>※平日・土は11時～20時から選択</li>
+                                        <li>※日・祝は11時～18時から選択</li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                            <p class="ttl"><span class="dot">●</span> 第2希望<span class="required">※必須</span></p>
+                            <div class="dateBox clearfix">
+                                <div class="cal" id="datepicker02"></div>
+                                <div class="rBox">
+                                    <p class="ttl"><span class="dot">●</span> 日付</p>
+                                    <input type="text" name="第2希望日" placeholder="2018年2月8日" class="validate[required]">
+                                    <p class="ttl"><span class="dot">●</span> 時間</p>
+                                    <select name="第2希望時間" class="validate[required]">
+                                        <option value="">00:00～00:00</option>
+                                        <option value="10:00～11:00">10:00～11:00</option>
+                                        <option value="11:00～12:00">11:00～12:00</option>
+                                        <option value="12:00～13:00">12:00～13:00</option>
+                                        <option value="13:00～14:00">13:00～14:00</option>
+                                        <option value="14:00～15:00">14:00～15:00</option>
+                                        <option value="15:00～16:00">15:00～16:00</option>
+                                        <option value="16:00～17:00">16:00～17:00</option>
+                                        <option value="17:00～18:00">17:00～18:00</option>
+                                        <option value="18:00～19:00">18:00～19:00</option>
+                                    </select>
+                                    <!-- <ul class="notes">
+                                        <li>※平日・土は11時～20時から選択</li>
+                                        <li>※日・祝は11時～18時から選択</li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </dd>
+
+                        <dt><span class="lineTxt">希望コース</span><span class="required">※必須</span></dt>
+                        <dd>
+                            <div class="courseSelect">
+                                <select name="希望コース" class="validate[required]">
+                                    <option value="">------------</option>
+                                    <option value="顔脱毛5回">顔脱毛5回</option>
+                                    <option value="VIO脱毛5回">VIO脱毛5回</option>
+                                    <option value="全身脱毛ライト">全身脱毛ライト</option>
+                                    <option value="全身脱毛スタンダード">全身脱毛スタンダード</option>
+                                    <option value="全身脱毛プレミアム">全身脱毛プレミアム</option>
+                                    <option value="全身脱毛プレミアム＋顔5回">全身脱毛プレミアム＋顔5回</option>
+                                    <option value="全身脱毛プレミアム＋VIO5回">全身脱毛プレミアム＋VIO5回</option>
+                                    <option value="全身脱毛プレミアム＋顔5回＋VIO5回">全身脱毛プレミアム＋顔5回＋VIO5回</option>
+                                </select>
+                            </div>
+                        </dd>
+
+                        <dt><span class="lineTxt">E-mail</span><span class="required">※必須</span></dt>
+                        <dd><input type="text" name="E-mail" placeholder="例）xxxxxxx@co.jp" class="validate[required]"><span class="notes">※半角英数</span></dd>
+
+                        <dt><span class="lineTxt">電話番号</span><span class="required">※必須</span></dt>
+                        <dd><input type="text" name="電話番号" placeholder="例）000-0000-0000" class="validate[required]"><span class="notes">※半角英数</span></dd>
+
+                        <dt><span class="lineTxt">お名前</span><span class="required">※必須</span></dt>
+                        <dd>
+                            <ul class="nameList">
+                                <li><span class="ttl"><span class="dot">●</span> お名前</span><span class="input"><input type="text" name="お名前" placeholder="例）山田花子" class="validate[required]"></span>
+                                </li>
+                                <li><span class="ttl"><span class="dot">●</span> よみがな</span><span class="input"><input type="text" name="よみがな" placeholder="例）やまだはなこ" class="validate[required]"></span>
+                                </li>
+                            </ul>
+                        </dd>
+
+                        <dt><span class="lineTxt">年齢</span><span class="required">※必須</span></dt>
+                        <dd><input type="text" name="年齢" placeholder="例）00" class="wid01 validate[required]"><span class="notes">※半角英数</span></dd>
+
+                        <dt><span class="lineTxt">問い合わせ内容</span></dt>
+                        <dd><textarea name="問い合わせ内容" placeholder="例）ご質問があればご記入ください。"></textarea>
+                        </dd>
+
+                    </dl>
+                    <ul class="submit">
+                        <li>
+                            <input type="submit" value="送信内容を確認する">
+                        </li>
+                    </ul>
+                    <p class="note"><span class="dot">●</span>メールフォーム送信後、2日経っても返信がない場合には、お手数ですがお電話にてお問い合わせください。</p>
+                </form>
+                <form id="kichijoji" method="post" action="mail2.php" class="mailForm">
+                    <input id="pm_kichijoji" name="pm1" type="hidden" size="30" value="">
+                    <dl id="contact">
+                        <!--
+                <dt class="fwBold"><span class="lineTxt">ご希望コース</span><span class="required">※必須</span></dt>
+                <dd><input type="checkbox" value="無料カウンセリング" name="ご希望コース" id="course" checked="checked"><label for="course">無料カウンセリング</label></dd>
+                -->
+
+                        <dt class="fwBold"><span class="lineTxt">ご希望日時</span></dt>
+                        <dd>
+                            <p class="ttl"><span class="dot">●</span> 第1希望<span class="required">※必須</span></p>
+                            <div class="dateBox clearfix">
+                                <div class="cal" id="datepicker03"></div>
+                                <div class="rBox">
+                                    <p class="ttl"><span class="dot">●</span> 日付</p>
+                                    <input type="text" name="第1希望日" placeholder="2018年2月8日" class="validate[required]">
+                                    <p class="ttl"><span class="dot">●</span> 時間</p>
+                                    <select name="第1希望時間" class="validate[required]">
+                                        <option value="">00:00～00:00</option>
+                                        <option value="10:00～11:00">10:00～11:00</option>
+                                        <option value="11:00～12:00">11:00～12:00</option>
+                                        <option value="12:00～13:00">12:00～13:00</option>
+                                        <option value="13:00～14:00">13:00～14:00</option>
+                                        <option value="14:00～15:00">14:00～15:00</option>
+                                        <option value="15:00～16:00">15:00～16:00</option>
+                                        <option value="16:00～17:00">16:00～17:00</option>
+                                        <option value="17:00～18:00">17:00～18:00</option>
+                                        <option value="18:00～19:00">18:00～19:00</option>
+                                    </select>
+                                    <!-- <ul class="notes">
+                                        <li>※平日・土は11時～20時から選択</li>
+                                        <li>※日・祝は11時～18時から選択</li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                            <p class="ttl"><span class="dot">●</span> 第2希望<span class="required">※必須</span></p>
+                            <div class="dateBox clearfix">
+                                <div class="cal" id="datepicker04"></div>
+                                <div class="rBox">
+                                    <p class="ttl"><span class="dot">●</span> 日付</p>
+                                    <input type="text" name="第2希望日" placeholder="2018年2月8日" class="validate[required]">
+                                    <p class="ttl"><span class="dot">●</span> 時間</p>
+                                    <select name="第2希望時間" class="validate[required]">
+                                        <option value="">00:00～00:00</option>
+                                        <option value="10:00～11:00">10:00～11:00</option>
+                                        <option value="11:00～12:00">11:00～12:00</option>
+                                        <option value="12:00～13:00">12:00～13:00</option>
+                                        <option value="13:00～14:00">13:00～14:00</option>
+                                        <option value="14:00～15:00">14:00～15:00</option>
+                                        <option value="15:00～16:00">15:00～16:00</option>
+                                        <option value="16:00～17:00">16:00～17:00</option>
+                                        <option value="17:00～18:00">17:00～18:00</option>
+                                        <option value="18:00～19:00">18:00～19:00</option>
+                                    </select>
+                                    <!-- <ul class="notes">
+                                        <li>※平日・土は11時～20時から選択</li>
+                                        <li>※日・祝は11時～18時から選択</li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </dd>
+
+                        <dt><span class="lineTxt">希望コース</span><span class="required">※必須</span></dt>
+                        <dd>
+                            <div class="courseSelect">
+                                <select name="希望コース" class="validate[required]">
+                                    <option value="">------------</option>
+                                    <option value="顔脱毛5回">顔脱毛5回</option>
+                                    <option value="VIO脱毛5回">VIO脱毛5回</option>
+                                    <option value="全身脱毛ライト">全身脱毛ライト</option>
+                                    <option value="全身脱毛スタンダード">全身脱毛スタンダード</option>
+                                    <option value="全身脱毛プレミアム">全身脱毛プレミアム</option>
+                                    <option value="全身脱毛プレミアム＋顔5回">全身脱毛プレミアム＋顔5回</option>
+                                    <option value="全身脱毛プレミアム＋VIO5回">全身脱毛プレミアム＋VIO5回</option>
+                                    <option value="全身脱毛プレミアム＋顔5回＋VIO5回">全身脱毛プレミアム＋顔5回＋VIO5回</option>
+                                </select>
+                            </div>
+                        </dd>
+
+                        <dt><span class="lineTxt">E-mail</span><span class="required">※必須</span></dt>
+                        <dd><input type="text" name="E-mail" placeholder="例）xxxxxxx@co.jp" class="validate[required]"><span class="notes">※半角英数</span></dd>
+
+                        <dt><span class="lineTxt">電話番号</span><span class="required">※必須</span></dt>
+                        <dd><input type="text" name="電話番号" placeholder="例）000-0000-0000" class="validate[required]"><span class="notes">※半角英数</span></dd>
+
+                        <dt><span class="lineTxt">お名前</span><span class="required">※必須</span></dt>
+                        <dd>
+                            <ul class="nameList">
+                                <li><span class="ttl"><span class="dot">●</span> お名前</span><span class="input"><input type="text" name="お名前" placeholder="例）山田花子" class="validate[required]"></span>
+                                </li>
+                                <li><span class="ttl"><span class="dot">●</span> よみがな</span><span class="input"><input type="text" name="よみがな" placeholder="例）やまだはなこ" class="validate[required]"></span>
+                                </li>
+                            </ul>
+                        </dd>
+
+                        <dt><span class="lineTxt">年齢</span><span class="required">※必須</span></dt>
+                        <dd><input type="text" name="年齢" placeholder="例）00" class="wid01 validate[required]"><span class="notes">※半角英数</span></dd>
+
+                        <dt><span class="lineTxt">問い合わせ内容</span></dt>
+                        <dd><textarea name="問い合わせ内容" placeholder="例）ご質問があればご記入ください。"></textarea>
+                        </dd>
+
+                    </dl>
+                    <ul class="submit">
+                        <li>
+                            <input type="submit" value="送信内容を確認する">
+                        </li>
+                    </ul>
+                    <p class="note"><span class="dot">●</span>メールフォーム送信後、2日経っても返信がない場合には、お手数ですがお電話にてお問い合わせください。</p>
+                </form>
+                <form id="omiya" method="post" action="mail3.php" class="mailForm">
+                    <input id="pm_omiya" name="pm1" type="hidden" size="30" value="">
+                    <dl id="contact">
+                        <!--
+                <dt class="fwBold"><span class="lineTxt">ご希望コース</span><span class="required">※必須</span></dt>
+                <dd><input type="checkbox" value="無料カウンセリング" name="ご希望コース" id="course" checked="checked"><label for="course">無料カウンセリング</label></dd>
+                -->
+
+                        <dt class="fwBold"><span class="lineTxt">ご希望日時</span></dt>
+                        <dd>
+                            <p class="ttl"><span class="dot">●</span> 第1希望<span class="required">※必須</span></p>
+                            <div class="dateBox clearfix">
+                                <div class="cal" id="datepicker05"></div>
+                                <div class="rBox">
+                                    <p class="ttl"><span class="dot">●</span> 日付</p>
+                                    <input type="text" name="第1希望日" placeholder="2021年3月1日" class="validate[required]">
+                                    <p class="ttl"><span class="dot">●</span> 時間</p>
+                                    <select name="第1希望時間" class="validate[required]">
+                                        <option value="">00:00～00:00</option>
+                                        <option value="10:00～11:00">10:00～11:00</option>
+                                        <option value="11:00～12:00">11:00～12:00</option>
+                                        <option value="12:00～13:00">12:00～13:00</option>
+                                        <option value="13:00～14:00">13:00～14:00</option>
+                                        <option value="14:00～15:00">14:00～15:00</option>
+                                        <option value="15:00～16:00">15:00～16:00</option>
+                                        <option value="16:00～17:00">16:00～17:00</option>
+                                        <option value="17:00～18:00">17:00～18:00</option>
+                                        <option value="18:00～19:00">18:00～19:00</option>
+                                    </select>
+                                    <!-- <ul class="notes">
+                                        <li>※平日・土は11時～20時から選択</li>
+                                        <li>※日・祝は11時～18時から選択</li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                            <p class="ttl"><span class="dot">●</span> 第2希望<span class="required">※必須</span></p>
+                            <div class="dateBox clearfix">
+                                <div class="cal" id="datepicker06"></div>
+                                <div class="rBox">
+                                    <p class="ttl"><span class="dot">●</span> 日付</p>
+                                    <input type="text" name="第2希望日" placeholder="2021年3月1日" class="validate[required]">
+                                    <p class="ttl"><span class="dot">●</span> 時間</p>
+                                    <select name="第2希望時間" class="validate[required]">
+                                        <option value="">00:00～00:00</option>
+                                        <option value="10:00～11:00">10:00～11:00</option>
+                                        <option value="11:00～12:00">11:00～12:00</option>
+                                        <option value="12:00～13:00">12:00～13:00</option>
+                                        <option value="13:00～14:00">13:00～14:00</option>
+                                        <option value="14:00～15:00">14:00～15:00</option>
+                                        <option value="15:00～16:00">15:00～16:00</option>
+                                        <option value="16:00～17:00">16:00～17:00</option>
+                                        <option value="17:00～18:00">17:00～18:00</option>
+                                        <option value="18:00～19:00">18:00～19:00</option>
+                                    </select>
+                                    <!-- <ul class="notes">
+                                        <li>※平日・土は11時～20時から選択</li>
+                                        <li>※日・祝は11時～18時から選択</li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </dd>
+
+                        <dt><span class="lineTxt">希望コース</span><span class="required">※必須</span></dt>
+                        <dd>
+                            <div class="courseSelect">
+                                <select name="希望コース" class="validate[required]">
+                                    <option value="">------------</option>
+                                    <option value="顔脱毛5回">顔脱毛5回</option>
+                                    <option value="VIO脱毛5回">VIO脱毛5回</option>
+                                    <option value="全身脱毛ライト">全身脱毛ライト</option>
+                                    <option value="全身脱毛スタンダード">全身脱毛スタンダード</option>
+                                    <option value="全身脱毛プレミアム">全身脱毛プレミアム</option>
+                                    <option value="全身脱毛プレミアム＋顔5回">全身脱毛プレミアム＋顔5回</option>
+                                    <option value="全身脱毛プレミアム＋VIO5回">全身脱毛プレミアム＋VIO5回</option>
+                                    <option value="全身脱毛プレミアム＋顔5回＋VIO5回">全身脱毛プレミアム＋顔5回＋VIO5回</option>
+                                </select>
+                            </div>
+                        </dd>
+
+                        <dt><span class="lineTxt">E-mail</span><span class="required">※必須</span></dt>
+                        <dd><input type="text" name="E-mail" placeholder="例）xxxxxxx@co.jp" class="validate[required]"><span class="notes">※半角英数</span></dd>
+
+                        <dt><span class="lineTxt">電話番号</span><span class="required">※必須</span></dt>
+                        <dd><input type="text" name="電話番号" placeholder="例）000-0000-0000" class="validate[required]"><span class="notes">※半角英数</span></dd>
+
+                        <dt><span class="lineTxt">お名前</span><span class="required">※必須</span></dt>
+                        <dd>
+                            <ul class="nameList">
+                                <li><span class="ttl"><span class="dot">●</span> お名前</span><span class="input"><input type="text" name="お名前" placeholder="例）山田花子" class="validate[required]"></span>
+                                </li>
+                                <li><span class="ttl"><span class="dot">●</span> よみがな</span><span class="input"><input type="text" name="よみがな" placeholder="例）やまだはなこ" class="validate[required]"></span>
+                                </li>
+                            </ul>
+                        </dd>
+
+                        <dt><span class="lineTxt">年齢</span><span class="required">※必須</span></dt>
+                        <dd><input type="text" name="年齢" placeholder="例）00" class="wid01 validate[required]"><span class="notes">※半角英数</span></dd>
+
+                        <dt><span class="lineTxt">問い合わせ内容</span></dt>
+                        <dd><textarea name="問い合わせ内容" placeholder="例）ご質問があればご記入ください。"></textarea>
+                        </dd>
+
+                    </dl>
+                    <ul class="submit">
+                        <li>
+                            <input type="submit" value="送信内容を確認する">
+                        </li>
+                    </ul>
+                    <p class="note"><span class="dot">●</span>メールフォーム送信後、2日経っても返信がない場合には、お手数ですがお電話にてお問い合わせください。</p>
+                </form>
+            </div>
+        </div>
+
+        <div id="privacy" class="section" style="padding: 20px 0;background-color: rgb(137 102 167);font-size: 12px;color: #fff;text-align: center;">
+            <a href="https://wi-clinic.com/privacy/" target="_blank" style="color:#ffffff;font-weight: 300;text-align: center;text-decoration: underline;">プライバシーポリシー</a>
+        </div>
+
+        <div class="footer-fixed visible-sp">
+            <ul class="flex ai-center flex-wrap">
+              <li>
+                <a href="tel:0120-897-184" class="tel linktrack" data-link="ginza">
+                  <span>銀座院 TEL</span>
+                  <span><i class="fas fa-mobile-alt"></i></span>
+                </a>
+              </li>
+
+              <li style="border-right: 1px solid; border-left: 1px solid; color: #696969;">
+                <a href="tel:0120-747-184" class="tel linktrack" data-link="kichijoji">
+                  <span>吉祥寺院 TEL</span>
+                  <span><i class="fas fa-mobile-alt"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="tel:0120-847-349" class="tel linktrack" data-link="omiya">
+                  <span>大宮院 TEL</span>
+                  <span><i class="fas fa-mobile-alt"></i></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        <div id="footer" class="section">
+            ©&nbsp;2020&nbsp;Wi&nbsp;Clinic
+        </div>
+
+
+    </div>
+    <!-- wrap -->
+
+
+    <script language="JavaScript" type="text/javascript">
+        //タブクリックでのフォーム切り替え
+        $('.selectForm').change(function() {
+            var val = $('.selectForm option:selected').val();
+            if (val == 'select') return;
+            $('.mailForm').fadeOut();
+            $('form#' + val).fadeIn();
+        });
+    </script>
+
+    <script>
+        $(function() {
+            $(".mailForm").validationEngine();
+            $('#datepicker01').datepicker({
+                showOtherMonths: true,
+                dateFormat: 'yy年mm月dd日',
+                minDate: new Date(2019, 10 - 1, 1),
+                beforeShowDay: function(date) {
+                    var month = String(date.getMonth() + 1);
+                    var day = String(date.getDate());
+                    if (month.length == 1) {
+                        month = '0' + month;
+                    }
+                    if (day.length == 1) {
+                        day = '0' + day;
+                    }
+                    var check_date = date.getFullYear() + "-" + month + "-" + day;
+                    if (check_date == "2019-09-01") {
+                        return [false];
+                    }
+                    return [true, ''];
+                },
+                onSelect: function(dateText, inst) {
+                    $('[name="第1希望日"]').val(dateText);
+                }
+            });
+            $('#datepicker02').datepicker({
+                showOtherMonths: true,
+                minDate: new Date(2019, 10 - 1, 1),
+                dateFormat: 'yy年mm月dd日',
+                beforeShowDay: function(date) {
+
+                    var month = String(date.getMonth() + 1);
+                    var day = String(date.getDate());
+                    if (month.length == 1) {
+                        month = '0' + month;
+                    }
+                    if (day.length == 1) {
+                        day = '0' + day;
+                    }
+                    var check_date = date.getFullYear() + "-" + month + "-" + day;
+                    if (check_date == "2019-09-01") {
+                        return [false];
+                    }
+                    return [true, ''];
+                },
+                onSelect: function(dateText, inst) {
+                    $('[name="第2希望日"]').val(dateText);
+                }
+            });
+            $('#datepicker03').datepicker({
+                showOtherMonths: true,
+                minDate: new Date(2020, 3 - 1, 29),
+                dateFormat: 'yy年mm月dd日',
+                beforeShowDay: function(date) {
+                    // 火曜日
+                    if (date.getDay() == 2) {
+                        return [false, ''];
+                    }
+
+                    var month = String(date.getMonth() + 1);
+                    var day = String(date.getDate());
+                    if (month.length == 1) {
+                        month = '0' + month;
+                    }
+                    if (day.length == 1) {
+                        day = '0' + day;
+                    }
+                    var check_date = date.getFullYear() + "-" + month + "-" + day;
+                    if (check_date == "2019-09-01") {
+                        return [false];
+                    }
+                    return [true, ''];
+                },
+                onSelect: function(dateText, inst) {
+                    $('[name="第1希望日"]').val(dateText);
+                }
+            });
+            $('#datepicker04').datepicker({
+                showOtherMonths: true,
+                minDate: new Date(2020, 3 - 1, 29),
+                dateFormat: 'yy年mm月dd日',
+                beforeShowDay: function(date) {
+                    // 火曜日
+                    if (date.getDay() == 2) {
+                        return [false, ''];
+                    }
+
+                    var month = String(date.getMonth() + 1);
+                    var day = String(date.getDate());
+                    if (month.length == 1) {
+                        month = '0' + month;
+                    }
+                    if (day.length == 1) {
+                        day = '0' + day;
+                    }
+                    var check_date = date.getFullYear() + "-" + month + "-" + day;
+                    if (check_date == "2019-09-01") {
+                        return [false];
+                    }
+                    return [true, ''];
+                },
+                onSelect: function(dateText, inst) {
+                    $('[name="第2希望日"]').val(dateText);
+                }
+            });
+            $('#datepicker05').datepicker({
+                showOtherMonths: true,
+                minDate: new Date(2021, 3 - 1, 1),
+                dateFormat: 'yy年mm月dd日',
+                beforeShowDay: function(date) {
+                    // 月曜日
+                    if (date.getDay() == 1) {
+                        return [false, ''];
+                    }
+                    // 木曜日
+                    if (date.getDay() == 4) {
+                        return [false, ''];
+                    }
+
+                    var month = String(date.getMonth() + 1);
+                    var day = String(date.getDate());
+                    if (month.length == 1) {
+                        month = '0' + month;
+                    }
+                    if (day.length == 1) {
+                        day = '0' + day;
+                    }
+                    var check_date = date.getFullYear() + "-" + month + "-" + day;
+                    if (check_date == "2019-09-01") {
+                        return [false];
+                    }
+                    return [true, ''];
+                },
+                onSelect: function(dateText, inst) {
+                    $('[name="第1希望日"]').val(dateText);
+                }
+            });
+            $('#datepicker06').datepicker({
+                showOtherMonths: true,
+                minDate: new Date(2021, 3 - 1, 1),
+                dateFormat: 'yy年mm月dd日',
+                beforeShowDay: function(date) {
+                    // 月曜日
+                    if (date.getDay() == 1) {
+                        return [false, ''];
+                    }
+                    // 木曜日
+                    if (date.getDay() == 4) {
+                        return [false, ''];
+                    }
+
+                    var month = String(date.getMonth() + 1);
+                    var day = String(date.getDate());
+                    if (month.length == 1) {
+                        month = '0' + month;
+                    }
+                    if (day.length == 1) {
+                        day = '0' + day;
+                    }
+                    var check_date = date.getFullYear() + "-" + month + "-" + day;
+                    if (check_date == "2019-09-01") {
+                        return [false];
+                    }
+                    return [true, ''];
+                },
+                onSelect: function(dateText, inst) {
+                    $('[name="第2希望日"]').val(dateText);
+                }
+            });
+
+            var param = getParam('pm1');
+            document.getElementById('pm_ginza').value = param;
+            document.getElementById('pm_kichijoji').value = param;
+            document.getElementById('pm_omiya').value = param;
+
+            function getParam(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+        });
+    </script>
+
+<script src="./js/event.js"></script>
+</body>
+</html>
